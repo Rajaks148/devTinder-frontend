@@ -7,6 +7,7 @@ import Login from './Components/Login';
 import Profile from './Components/Profile';
 import Logout from './Components/Logout';
 import Feed from './Components/Feed';
+import ConnectionRequests from './Components/ConnectionRequests';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
                     <Route path="/" element={<Body />}>
                         <Route path="/login" element={<Login />}></Route>
                         <Route path="/profile" element={<Profile />}></Route>
+                        <Route path="/connectionRequests" element={<ConnectionRequests />}></Route>
                         <Route path="/" element={<Feed />}></Route>
                         <Route path="/logout" element={<Logout />}></Route>
                     </Route>
