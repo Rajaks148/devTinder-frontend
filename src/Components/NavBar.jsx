@@ -9,6 +9,10 @@ const NavBar = () => {
   const [requestCount, setRequestCount] = useState(0);
 
   const getRequestCount = async () => {
+
+     if (location.pathname === "/login" || location.pathname === "/register")
+      return;
+
     try {
       const res = await axios.get(BASE_URL + "user/request/count", {
         withCredentials: true
@@ -61,11 +65,15 @@ const NavBar = () => {
 
               <li>
                 <Link to="/connectionRequests">
-                  New Requests{" "}
+                  Requests{" "}
                   <span className="badge badge-primary">{requestCount}</span>
                 </Link>
               </li>
-
+                <li>
+                <Link to="/connections">
+                  Connections
+                </Link>
+              </li>
               <li>
                 <Link to="/logout">Logout</Link>
               </li>

@@ -14,7 +14,9 @@ const Body = () => {
     const user = useSelector((store) => store.user);
 
     const fetchUser = async () => {
-        if(user) return;
+        if(user || location.pathname === "/login" || location.pathname === "/register") return;
+
+
         try {
             const res = await axios.get(BASE_URL+"profile/view",
                 { withCredentials: true } 
